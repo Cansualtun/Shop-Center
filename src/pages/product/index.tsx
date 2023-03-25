@@ -3,7 +3,7 @@ import axios from "axios";
 import Navbar from "@/components/UI/Navbar";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'react-i18next';
-import Layout from "@/components/UI/Layout";
+
 type Product = {
     title : string;
     description : string;
@@ -20,7 +20,6 @@ type Product = {
 export default function product(products : Props) {
   return (
     <>
-    <Layout>
     <Navbar />
     <div className="grid grid-cols-1 ml-10 gap-4 p-20 md:grid-cols-3"> 
         {products.products.map((product : any) => {
@@ -31,7 +30,6 @@ export default function product(products : Props) {
             )
         })}
     </div>
-    </Layout>
     </>
   )
 }

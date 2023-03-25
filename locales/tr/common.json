@@ -1,4 +1,20 @@
 {
-  "title": "Merhaba Dünya",
-  "variable-example": "Using a variable {{count}}"
+  "variable-example": "Using a variable {{count}}",
+  "home" : "Ana Sayfa",
+  "products" : "Ürünler",
+  "favorites" : "Favoriler",
+  "title" : "Ürün Dünyası",
+  "detail" : "Detayları Gör",
+  "addFavorite" : " Favorilere Ekle",
+  "addCart" : "Sepete Ekle",
+  "yourCartIsEmpty" : "Sepetiniz Boş",
+  "increaseProduct" : "Ürünleri Arttır",
+  "decreaseProduct" : "Ürünleri Azalt",
+  "removeProduct" : "Ürünleri Kaldır",
+  "emptyFavorites" : "Favorileriniz Boş",
+  "favoritePage" : "Favorilerim",
+  "areYouSure" : "Seçtiğiniz ürünü favorilere eklemek ister misiniz?",
+  "ratingtitle" : "Puan",
+  "categorytitle" : "Kategori",
+  "close" : "Kapat"
 }

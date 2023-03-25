@@ -1,4 +1,22 @@
 {
-  "title": "Hello world",
-  "variable-example": "Using a variable {{count}}"
+  "variable-example": "Using a variable {{count}}",
+  "home" : "Home",
+  "products" : "Products",
+  "favorites" : "Favorites",
+  "title" : "Product World",
+  "detail" : "See Detail",
+  "addFavorite" : "Add Favorites",
+  "addCart" : "Add Cart",
+  "yourCartIsEmpty" : "Your cart is empty",
+  "yourFavoritesIsEmpty" : "Your favorites is empty",
+  "increaseProduct" : "Increase Product",
+  "decreaseProduct" : "Decrease Product",
+  "removeProduct" : "Remove Product",
+  "emptyFavorites" : "Empty Favorites",
+  "favoritePage" : "Favorite Page",
+  "areYouSure" : "Would you like to add your selected product to favourites?",
+  "ratingtitle" : "Rating",
+  "rating" : "Rating",
+  "categorytitle" : "Category",
+  "close" : "Close"
 }
