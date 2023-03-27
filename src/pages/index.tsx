@@ -38,11 +38,10 @@ export default function Home(products : Props) {
       </Head>
       <Navbar/>
       <Swiper
-      // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y , Autoplay]}
-      className={"bg-red-500"}
+      className={"bg-red-500 grid grid-cols-3 md:grid-cols-6"}
       spaceBetween={50}
-      slidesPerView={3}
+      slidesPerView={2}
       navigation
       autoplay={{
         delay: 5000
@@ -52,7 +51,7 @@ export default function Home(products : Props) {
     >
       {products.products.map((product : any) => {
         return (
-          <SwiperSlide key={product.id} className={"!flex item-center justify-center p-10 sm-"}>
+          <SwiperSlide key={product.id} className={"grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 mt-10 ml-3"}>
             <Card id={product.id} title={product.title} rating={product.rating} category={product.category} />  
           </SwiperSlide>
         )

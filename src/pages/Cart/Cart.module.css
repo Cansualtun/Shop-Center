@@ -20,13 +20,13 @@
   .body {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    text-align: center;
+    text-align: left;
     margin-bottom: 1rem;
   }
   .body > * {
     display: flex;
     align-items: center;
+    text-align : left;
     justify-content: center;
     flex : 1;
   }

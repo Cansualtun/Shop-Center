@@ -25,7 +25,7 @@ export default function product(products : Props) {
         {products.products.map((product : any) => {
             return (
                 <div key={product.id}>
-                <Card id={product.id} title={product.title} rating={product.rating} category={product.category}/>  
+                <Card id={product.id} title={product.title} rating={product.rating} category={product.category} description={product.description}/>  
                 </div>
             )
         })}

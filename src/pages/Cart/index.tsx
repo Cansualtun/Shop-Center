@@ -6,6 +6,7 @@ import { incrementQuantity, decrementQuantity, removeFromCart } from "@/store/fe
 import Button from "@/components/UI/Button/Button";
 import useTranslation from "next-translate/useTranslation";
 import { useState } from "react";
+import Empty from "@/components/UI/empty";
 
 export default function Cart({product}: {product: any} ) {
     const cart = useSelector((state : any) => state.cart);
@@ -15,6 +16,12 @@ export default function Cart({product}: {product: any} ) {
     const increase = t('increaseProduct');
     const decrease = t('decreaseProduct');
     const remove = t('removeProduct');
+    const tableTitle = t('tableTitle');
+    const ratingtitle = t('ratingtitle');
+    const category = t('category');
+    const actions = t('actions');
+    const description = t('description');
+    
 
     // const getTotalPrice = () => {
     //     return cart.reduce(
@@ -30,14 +37,17 @@ export default function Cart({product}: {product: any} ) {
         {cart.length === 0 ? (
             <>
           <h1>{empty}</h1>
+          {/* <p className="flex align-center justify-center w-50 h-50"><iframe src="https://embed.lottiefiles.com/animation/112136"></iframe></p> */}
+          <Empty/>
           </>
         ) : (
           <>
             <div className={styles.header}>
-              <div>Title</div>
-              <div>Rating</div>
-              <div>Category</div>
-              <div>Actions</div>
+              <div>{tableTitle}</div>
+              <div>{ratingtitle}</div>
+              <div>{category}</div>
+              <div>{description}</div>
+              <div>{actions}</div>
             </div>
             {cart.map((product : any) => (
               <div className={styles.body} key="deneme">
@@ -46,26 +56,17 @@ export default function Cart({product}: {product: any} ) {
                 </div> */}
                 <p>{product.title}</p> 
                 <p>{product.rating}</p>
-                <p>{product.price}</p>
                 <p>{product.category}</p>
+                <p>{product.description}</p>
                 <div className={styles.buttons}>
-                <Button variant="secondary" onClick={() => dispatch(incrementQuantity(product.id))}>
-                 {increase}
-                </Button>
-                <Button variant="primary" onClick={() => dispatch(decrementQuantity(product.id))}>
-                  {decrease}
-                </Button>
-                <Button onClick={() => dispatch(removeFromCart(product.id))}>
+                <Button variant="third" className="!w-full" onClick={() => dispatch(removeFromCart(product.id))}>
                   {remove}
                 </Button>
                 </div>
-                {/* <p>$ {product.quantity * product.price}</p> */}
               </div>
             ))}
-             {/* <h2>Grand Total: $ {getTotalPrice()}</h2> */}
           </>
         )}
-        <hr/>
       </div>
       </>
     );

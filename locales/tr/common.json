@@ -16,5 +16,16 @@
   "areYouSure" : "Seçtiğiniz ürünü favorilere eklemek ister misiniz?",
   "ratingtitle" : "Puan",
   "categorytitle" : "Kategori",
-  "close" : "Kapat"
+  "close" : "Kapat",
+  "stocktitle" : "Stok",
+  "english" : "İngilizce",
+  "turkish" : "Türkçe",
+  "add" : "Ekle",
+  "Return to Home Page" : "Ana Sayfaya Dön",
+  "productAdd" : "Ürün Eklendi",
+  "tableTitle" : "Başlık",
+  "category" : "Kategori",
+  "actions" : "Eylemler",
+  "deleteProduct" : "Ürünü Sil",
+  "sureDelete" : "Ürünü silmek istediğinize emin misiniz?"
 }

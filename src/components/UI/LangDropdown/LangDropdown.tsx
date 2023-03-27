@@ -1,8 +1,11 @@
 import { useRouter } from 'next/router'
+import useTranslation from 'next-translate/useTranslation'
 
 function LangDropdown() {
   const router = useRouter()
-
+  const { t, lang } = useTranslation('common')
+  const english = t('english')
+  const turkish = t('turkish')
   const changeLanguage = (language : any) => {
     router.push(router.pathname, router.asPath, { locale: language })
   }
@@ -16,7 +19,7 @@ function LangDropdown() {
         onClick={() => changeLanguage('en')}
       > 
       <div className='flex flex-row gap-2'>
-        English
+        {english}
         <img width={20} height={20} src="/united-states.png" alt="English" />
         </div>   
       </button>
@@ -27,7 +30,7 @@ function LangDropdown() {
         onClick={() => changeLanguage('tr')}
       >
         <div className='flex flex-row gap-2'>
-        Turkish
+        {turkish}
         <img width={20} height={20} src="/turkey.png" alt="turkish" />
         </div>
       </button>

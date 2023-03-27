@@ -1,7 +1,11 @@
 import Rating from "../UI/Rating"
 import {AiOutlineStock} from "react-icons/ai"
+import useTranslation from 'next-translate/useTranslation';
 
 export default function CardDetail ({product} : {product: any}) {
+    const { t, lang } = useTranslation('common')
+    const ratingtitle = t('rating')
+    const stocktitle = t('stock')
     const {title, description, rating , thumbnail , stock } = product
     return (
         <>
@@ -16,11 +20,11 @@ export default function CardDetail ({product} : {product: any}) {
         <div className="flex justify-center">
         <Rating />
         </div>
-        <p className="mb-3 font-bold font-md text-gray-700 dark:text-gray-400">Rating : {rating}</p>
+        <p className="mb-3 font-bold font-md text-gray-700 dark:text-gray-400">{ratingtitle}: {rating}</p>
         <hr/>
         <div className="flex justify-center items-center flex-col gap-2">
          <AiOutlineStock color="red" size={30} />
-        <p className="font-bold" font-bold >Stock: {stock}</p>
+        <p className="font-bold" font-bold >{stocktitle} : {stock}</p>
         </div>
     </div>
 </div>
