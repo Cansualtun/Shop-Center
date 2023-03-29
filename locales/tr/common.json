@@ -11,7 +11,7 @@
   "increaseProduct" : "Ürünleri Arttır",
   "decreaseProduct" : "Ürünleri Azalt",
   "removeProduct" : "Ürünleri Kaldır",
-  "emptyFavorites" : "Favorileriniz Boş",
+  "emptyFavorites" : "Favori Listeniz Boş",
   "favoritePage" : "Favorilerim",
   "areYouSure" : "Seçtiğiniz ürünü favorilere eklemek ister misiniz?",
   "ratingtitle" : "Puan",
@@ -27,5 +27,6 @@
   "category" : "Kategori",
   "actions" : "Eylemler",
   "deleteProduct" : "Ürünü Sil",
-  "sureDelete" : "Ürünü silmek istediğinize emin misiniz?"
+  "sureDelete" : "Ürünü silmek istediğinize emin misiniz?",
+  "backToProducts" : "Ürün Listesine geri dön"
 }

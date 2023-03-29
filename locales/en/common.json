@@ -12,7 +12,7 @@
   "increaseProduct" : "Increase Product",
   "decreaseProduct" : "Decrease Product",
   "removeProduct" : "Remove Product",
-  "emptyFavorites" : "Your Empty ",
+  "emptyFavorites" : "Your Favorite List Empty",
   "favoritePage" : "Favorite Page",
   "areYouSure" : "Would you like to add your selected product to favourites?",
   "ratingtitle" : "Rating",
@@ -29,5 +29,6 @@
   "category" : "Category",
   "actions" : "Actions",
   "deleteProduct" : "Delete Product",
-  "sureDelete" : "Are you sure you want to delete this product?"
+  "sureDelete" : "Are you sure you want to delete this product?",
+  "backToProducts" : "Back to Products List"
 }

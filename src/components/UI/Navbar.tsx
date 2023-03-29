@@ -2,8 +2,11 @@ import Link from "next/link"
 import { BsFillCartCheckFill } from "react-icons/bs";
 import LangDropdown from "./LangDropdown/LangDropdown";
 import useTranslation from 'next-translate/useTranslation'
+import { useTheme } from "next-themes";
+import {BsLightbulb} from "react-icons/bs";
  
 export default function Navbar () {
+  const { theme, setTheme } = useTheme()
   const { t, lang } = useTranslation('common')
   const home = t('home')
   const products = t('products')
@@ -25,18 +28,25 @@ export default function Navbar () {
     <div className="hidden w-full md:block md:w-auto" id="navbar-default">
       <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li>
-          <Link href="/" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">{home}</Link>
+          <Link href="/" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:text-white">{home}</Link>
         </li>
         <li>
-          <Link href="/product" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">{products}</Link>
+          <Link href="/product" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:text-white">{products}</Link>
         </li>
         <li>
-          <Link href="/Favorite" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">{favorites}</Link>
+          <Link href="/Favorite" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:text-white">{favorites}</Link>
         </li>
         <li className="w-24">
          <Link href="/Cart">
         <BsFillCartCheckFill size={25} color={"orange"}/>
         </Link>
+        </li>
+        <li>
+        <button
+          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+          className="text-white bg-transperent rounded dark:text-black">
+          <BsLightbulb size={25} color={"orange"}/>
+        </button>
         </li>
         <li className="w-24">
         <LangDropdown/>

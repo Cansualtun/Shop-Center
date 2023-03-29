@@ -1,4 +1,4 @@
-import CardDetail from "@/components/Card/CardDetail";
+import CardDetail from "@/components/CardDetail/CardDetail";
 import axios from "axios";
 import Navbar from "@/components/UI/Navbar";
 

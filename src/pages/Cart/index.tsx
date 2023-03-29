@@ -2,7 +2,7 @@ import Navbar from "@/components/UI/Navbar"
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './Cart.module.css';
 import Image from 'next/image'
-import { incrementQuantity, decrementQuantity, removeFromCart } from "@/store/features/card";
+import { removeFromCart } from "@/store/features/card";
 import Button from "@/components/UI/Button/Button";
 import useTranslation from "next-translate/useTranslation";
 import { useState } from "react";

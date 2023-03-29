@@ -1,8 +1,6 @@
 import Card from "@/components/Card/Card";
 import axios from "axios";
 import Navbar from "@/components/UI/Navbar";
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'react-i18next';
 
 type Product = {
     title : string;
@@ -21,7 +19,7 @@ export default function product(products : Props) {
   return (
     <>
     <Navbar />
-    <div className="grid grid-cols-1 ml-10 gap-4 p-20 md:grid-cols-3"> 
+    <div className="grid grid-cols-1 ml-10 gap-4 p-10 md:grid-cols-3 sm:grid-cols-2"> 
         {products.products.map((product : any) => {
             return (
                 <div key={product.id}>

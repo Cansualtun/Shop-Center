@@ -7,15 +7,17 @@ import {CgDetailsMore} from "react-icons/cg";
 import useTranslation from "next-translate/useTranslation";
 import { useDispatch } from 'react-redux';
 import { addToCart } from "@/store/features/card";
-import {addToFav} from "@/store/features/favorite";
-import { useState } from "react";
+import {addFav} from "@/store/features/favorite";
+import { useState , useEffect } from "react";
 import Modal from "../UI/Modal";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Skeleton from "./skeleton";
 
 export default function Card(product : any , onClose: () => void ) {
     const dispatch = useDispatch();
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState(true);
     const { t, lang } = useTranslation('common')
     const detail = t('detail')
     const addFavorite = t('addFavorite')
@@ -28,6 +30,10 @@ export default function Card(product : any , onClose: () => void ) {
     const productAdd = t('productAdd')
     const notify = () => toast.success(productAdd);
 
+    useEffect(() => {
+            setTimeout(() => setIsLoading(false), 1000);
+          }, []);
+
     const handleOpenModal = () => {
         setIsModalOpen(true);
       };
@@ -37,7 +43,7 @@ export default function Card(product : any , onClose: () => void ) {
       };
 
         const handleAddToFav = () => {
-        dispatch(addToFav(product))
+        dispatch(addFav(product))
         notify()
         setIsModalOpen(false);
         };
@@ -52,7 +58,13 @@ export default function Card(product : any , onClose: () => void ) {
     const {title, description, rating , id , category } = product
     return (
         <>
+         {isLoading && (
+        <div>
+          <Skeleton/>
+        </div>
+      )}
         <title>{favoritePage}</title>
+        {!isLoading && (
       <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
     </a> 
@@ -73,20 +85,10 @@ export default function Card(product : any , onClose: () => void ) {
            </Button>
         </Link>
         {/* Add Favorite */}
-        {/* <Button onClick={handleOpenModal} variant="third" className="flex flex-row gap-5">
+        <Button onClick={handleAddToFav} variant="third" className="flex flex-row gap-5">
         <BsCartPlusFill/>
             {addFavorite}
         </Button>
-        <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-        <BsCartPlusFill/>
-            {addFavorite}
-            <p>{areYouSure}</p>
-            <div className="flex justify-center mt-10">
-            <Link href="/favorite">
-            <Button variant="success" className="justify-center item-center rounded-md border border-transparent shadow-sm px-4 py-2 text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:text-sm">{add}</Button>
-            </Link>
-            </div>
-        </Modal>   */}
          {/* AddCart  */}
         <Button onClick={handleOpenModal} variant="secondary" className="flex flex-row gap-5">
         <BsCartPlusFill/>
@@ -104,6 +106,7 @@ export default function Card(product : any , onClose: () => void ) {
         </div>
     </div>
 </div>
+  )}
 </>
     )
 }
