@@ -28,5 +28,10 @@
   "actions" : "Eylemler",
   "deleteProduct" : "Ürünü Sil",
   "sureDelete" : "Ürünü silmek istediğinize emin misiniz?",
-  "backToProducts" : "Ürün Listesine geri dön"
+  "backToProducts" : "Ürün Listesine geri dön",
+  "productDelete" : "Ürün Silindi",
+  "product" : "Ürün",
+  "favoriteList" : "Favori Listesi",
+  "cartList" : "Sepet Listesi",
+  "productRemove" : "Ürün sepetten başarıyla kaldırıldı"
 }

@@ -14,7 +14,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Skeleton from "./skeleton";
 
-export default function Card(product : any , onClose: () => void ) {
+
+export default function Card(product : any ) {
     const dispatch = useDispatch();
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const [isLoading, setIsLoading] = useState(true);
@@ -31,8 +32,8 @@ export default function Card(product : any , onClose: () => void ) {
     const notify = () => toast.success(productAdd);
 
     useEffect(() => {
-            setTimeout(() => setIsLoading(false), 1000);
-          }, []);
+            setTimeout(() => setIsLoading(false), 2000);
+              }, []);   
 
     const handleOpenModal = () => {
         setIsModalOpen(true);
@@ -48,13 +49,13 @@ export default function Card(product : any , onClose: () => void ) {
         setIsModalOpen(false);
         };
 
-
-      const handleAddToCart = () => {
-        dispatch(addToCart(product))
-        notify()
-        setIsModalOpen(false);
-        };
+        const handleAddToCart = () => {
+            dispatch(addToCart(product))
+            notify()
+            setIsModalOpen(false);
+            };
     
+
     const {title, description, rating , id , category } = product
     return (
         <>
@@ -79,25 +80,32 @@ export default function Card(product : any , onClose: () => void ) {
         <div className="flex justify-center flex-col m-20 gap-5 mt-10">
             {/* Detail */}
         <Link href={`/product/${id}`}>
+        <div className="flex justify-center align-center w-full">
            <Button variant="primary" className="flex flex-row gap-5">
             <CgDetailsMore/>
             {detail}
            </Button>
+        </div>   
         </Link>
         {/* Add Favorite */}
+        <div className="flex justify-center align-center w-full">
         <Button onClick={handleAddToFav} variant="third" className="flex flex-row gap-5">
         <BsCartPlusFill/>
             {addFavorite}
         </Button>
+        </div> 
+        <div className="flex justify-center align-center w-full">
          {/* AddCart  */}
         <Button onClick={handleOpenModal} variant="secondary" className="flex flex-row gap-5">
         <BsCartPlusFill/>
             {addCart}
         </Button>
+        </div>
         <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-        <BsCartPlusFill/>
+            <div className="flex align-center justify-center flex-col">
             {addCart}
-            <p>{areYouSure}</p>
+            <p className="font-light flex align-center">{areYouSure}</p>
+            </div>
             <div className="flex justify-center mt-10">
             <Button onClick={handleAddToCart} variant="success" className="justify-center item-center rounded-md border border-transparent shadow-sm px-4 py-2 text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:text-sm">{add}</Button>
             </div>

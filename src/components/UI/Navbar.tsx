@@ -3,7 +3,7 @@ import { BsFillCartCheckFill } from "react-icons/bs";
 import LangDropdown from "./LangDropdown/LangDropdown";
 import useTranslation from 'next-translate/useTranslation'
 import { useTheme } from "next-themes";
-import {BsLightbulb} from "react-icons/bs";
+import {MdOutlineHighlight} from "react-icons/md"
  
 export default function Navbar () {
   const { theme, setTheme } = useTheme()
@@ -18,7 +18,7 @@ export default function Navbar () {
 <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
   <div className="container flex flex-wrap items-center justify-between mx-auto">
     <Link href="/" className="flex items-center">
-        <img src="/logo.png" className="h-6 mr-3 sm:h-9" alt="Product World logo" />
+        <img src="/logo.png" className="h-6 mr-3 sm:h-9 dark:hidden" alt="Product World logo" />
         <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">{title}</span>
     </Link>
     <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
@@ -45,7 +45,7 @@ export default function Navbar () {
         <button
           onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
           className="text-white bg-transperent rounded dark:text-black">
-          <BsLightbulb size={25} color={"orange"}/>
+          <MdOutlineHighlight size={25} color={"orange"}/>
         </button>
         </li>
         <li className="w-24">

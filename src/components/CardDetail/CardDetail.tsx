@@ -12,7 +12,7 @@ export default function CardDetail ({product} : {product: any}) {
     const {title, description, rating , thumbnail , stock } = product
 
     useEffect(() => {
-            setTimeout(() => setIsLoading(false), 1000);
+            setTimeout(() => setIsLoading(false), 2000);
           }, []);
 
     return (

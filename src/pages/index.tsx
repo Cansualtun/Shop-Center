@@ -39,18 +39,29 @@ export default function Home(products : Props) {
       <Navbar/>
       <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y , Autoplay]}
-      className={"bg-red-500 dark:bg-gray-700 grid grid-cols-1 md:grid-cols-3"}
+      className={"bg-red-500 dark:bg-gray-600 grid grid-cols-1 md:grid-cols-3 content-center"}
       spaceBetween={50}
       slidesPerView={3}
       navigation
       autoplay={{
         delay: 5000
       }}
+      breakpoints={{
+        300: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      }}
       onSwiper={(swiper) => console.log(swiper)}
     >
       {products.products.map((product : any) => {
         return (
-          <SwiperSlide key={product.id} className={"grid grid-cols-1 md:grid-cols-3 mt-10 ml-3"}>
+          <SwiperSlide key={product.id} className={"grid grid-cols-1 md:grid-cols-3"}>
             <Card id={product.id} title={product.title} rating={product.rating} category={product.category} />  
           </SwiperSlide>
         )
