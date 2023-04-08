@@ -10,6 +10,7 @@ import Skeleton from "../../pages/skeleton";
 import { BsCartPlusFill } from "react-icons/bs";
 import Modal from "@/components/UI/Modal";
 import { ToastContainer, toast } from 'react-toastify';
+import { addFav } from "@/store/features/favorite";
 
 
 export default function Cart({product}: {product: any} ) {
@@ -17,7 +18,6 @@ export default function Cart({product}: {product: any} ) {
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-    const [count, setCount] = useState(0);
     const { t, lang } = useTranslation('common')
     const empty = t('yourCartIsEmpty');
     const remove = t('removeProduct');
@@ -27,7 +27,7 @@ export default function Cart({product}: {product: any} ) {
     const actions = t('actions');
     const description = t('description');
     const cartList = t('cartList');
-    const areYouSure = t('areYouSure')
+    const areYouSureRemoveProduct = t('areYouSureRemoveProduct');
     const productRemove = t('productRemove')
     const notify = () => toast.success(productRemove);
 
@@ -49,6 +49,7 @@ export default function Cart({product}: {product: any} ) {
         notify()
     };
 
+    
     return (
         <>
          <Navbar/>
@@ -78,7 +79,7 @@ export default function Cart({product}: {product: any} ) {
            </tr>   
           </thead>
             {cart.map((product : any) => (
-              <tbody key={"deneme"}>
+              <tbody key={""}>
                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{product.title}</th> 
                 <td scope="row" className="px-6 py-4">{product.rating}</td>
@@ -92,7 +93,7 @@ export default function Cart({product}: {product: any} ) {
                   <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
                     <div className="flex align-center items-center justify-center flex-col gap-2">
                   {remove}
-                   <p className="font-light">{areYouSure}</p>
+                   <p className="font-light">{areYouSureRemoveProduct}</p>
                    </div>
                    <div className="flex justify-center mt-10">
                   <Button variant="secondary" className="mt-2" onClick={handleRemoveFromCart}>

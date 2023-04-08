@@ -10,7 +10,7 @@
   "yourCartIsEmpty" : "Sepetiniz Boş",
   "increaseProduct" : "Ürünleri Arttır",
   "decreaseProduct" : "Ürünleri Azalt",
-  "removeProduct" : "Ürünleri Kaldır",
+  "removeProduct" : "Ürünü Kaldır",
   "emptyFavorites" : "Favori Listeniz Boş",
   "favoritePage" : "Favorilerim",
   "areYouSure" : "Seçtiğiniz ürünü favorilere eklemek ister misiniz?",
@@ -33,5 +33,6 @@
   "product" : "Ürün",
   "favoriteList" : "Favori Listesi",
   "cartList" : "Sepet Listesi",
-  "productRemove" : "Ürün sepetten başarıyla kaldırıldı"
+  "productRemove" : "Ürün sepetten başarıyla kaldırıldı",
+  "areYouSureRemoveProduct" : "Ürünü sepetten kaldırmak istediğinize emin misiniz?"
 }

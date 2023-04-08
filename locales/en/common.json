@@ -33,5 +33,6 @@
   "backToProducts" : "Back to Products List",
   "favoriteList" : "Favorite List",
   "cartList" : "Cart List",
-  "productRemove" : "Product successfully removed from cart"
+  "productRemove" : "Product successfully removed from cart",
+  "areYouSureRemoveProduct" : "Are you sure you want to remove this product from cart?"
 }

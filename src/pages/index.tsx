@@ -29,8 +29,6 @@ type Props = {
 export default function Home(products : Props) {
   const { t, lang } = useTranslation('common')
   const hw = t('title')
-  console.log(hw);
-  
   return (
     <>
       <Head>
@@ -74,7 +72,6 @@ export default function Home(products : Props) {
 
 export async function getServerSideProps(context : any )  {
   const { data } = await axios("https://dummyjson.com/products");
-  console.log(data)
   return {
     props: {
       products: data.products,  
